@@ -90,7 +90,7 @@ namespace Model.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("AuctionItems");
+                    b.ToTable("AUCTION_HAS_ITEMS_JT");
                 });
 
             modelBuilder.Entity("Model.Entities.Auctions.Customer", b =>
@@ -99,12 +99,6 @@ namespace Model.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("CUSTOMER_ID");
-
-                    b.Property<string>("CustomerNr")
-                        .IsRequired()
-                        .HasMaxLength(12)
-                        .HasColumnType("varchar(12)")
-                        .HasColumnName("CUSTOMER_NR");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -171,7 +165,7 @@ namespace Model.Migrations
             modelBuilder.Entity("Model.Entities.Auctions.AuctionItems", b =>
                 {
                     b.HasOne("Model.Entities.Artworks.AArtwork", "Artwork")
-                        .WithMany()
+                        .WithMany("CoolList")
                         .HasForeignKey("ArtworkId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -185,6 +179,11 @@ namespace Model.Migrations
                     b.Navigation("Artwork");
 
                     b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("Model.Entities.Artworks.AArtwork", b =>
+                {
+                    b.Navigation("CoolList");
                 });
 #pragma warning restore 612, 618
         }
