@@ -28,31 +28,20 @@
     
     <script>
         $(document).ready(function () {
-            $('.bi-trash').click(function () {
-                let Itemid = this.id;
-                $.ajax({
-                    url: 'http://htl.boxtree.at/medw4/api/random.php?id='+Itemid,
-                    statusCode: {
-                        404: function () {
-                            alert("Löschen funktionierte nicht");
-                        },
-                        200: function() {
-                            $(this).parent().parent().remove();
-                        }
-                    }
-                });
-            });
             $.ajax({
                 dataType: "json",
                 url: 'http://htl.boxtree.at/medw4/api/students.php?students',
                 success: function (data) {
                     for(var i = 0; i < data.length; i++) {
                         var obj = data[i];
-                        $(".table > tbody").append("<tr><td>"+obj.id+"</td><td>"+obj.firstname+"</td>" +
-                            "<td>"+obj.lastname+"</td><td>"+obj.dob+"<td><i id='del' class='bi bi-trash mx-1 del'></i></td></tr>");
+                        $(".table > tbody").append("<tr><td>"+obj.id+"</td><td>"+obj.firstname+"</td><td>"+obj.lastname+"</td><td>"+obj.dob+"<td><i class='del bi bi-trash'></i></td></tr>");
                     }
+                    $(".del").click(function () {
+                        $(this).parent().parent().remove();
+                    });
                 }
             });
+            
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
