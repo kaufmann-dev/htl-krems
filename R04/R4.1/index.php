@@ -62,8 +62,7 @@
                             echo"<i class='bi bi-check-circle-fill text-success'></i>";
                             echo"</span></div></div>";
                         }
-                    }
-                    
+                    }  
                 ?>
             </div>
 

@@ -36,7 +36,8 @@
                         VALUES
                             ('WE HAVE A DREAM!','12. August 2022','„Ich wünsche dir und mir, dass dein Traum für dich und diese Welt in Erfüllung geht.“','https://www.htlkrems.ac.at/2022/08/12/we-have-a-dream/'),
                             ('PICKNICK UND NERVENKITZEL IN WIEN','3. August 2022','Die 4AHIT im Escaperoom!','https://www.htlkrems.ac.at/2022/08/03/picknick-und-nervenkitzel-in-wien/'),
-                            ('SURFKURS IN PODERSDORF – 2AHIT','3. August 2022','Die 2AHIT surfte in der letzten Schulwoche nicht im WWW sondern am Neusiedlersee!','https://www.htlkrems.ac.at/2022/08/03/surfkurs-in-podersdorf-2ahit/');");
+                            ('SURFKURS IN PODERSDORF – 2AHIT','3. August 2022','Die 2AHIT surfte in der letzten Schulwoche nicht im WWW sondern am Neusiedlersee!','https://www.htlkrems.ac.at/2022/08/03/surfkurs-in-podersdorf-2ahit/')
+                        ;");
 
                         $sth = $conn->prepare("SELECT * FROM news");
                         $sth->execute();
