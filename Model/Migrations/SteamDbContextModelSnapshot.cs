@@ -56,7 +56,7 @@ namespace Model.Migrations
                     b.ToTable("AIRSHIPS");
                 });
 
-            modelBuilder.Entity("Model.Entities.Airships.Engines.Engine", b =>
+            modelBuilder.Entity("Model.Entities.Airships.Engines.AEngine", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -85,7 +85,7 @@ namespace Model.Migrations
 
                     b.ToTable("ENGINES_ST");
 
-                    b.HasDiscriminator<string>("ENGINE_TYPE").HasValue("Engine");
+                    b.HasDiscriminator<string>("ENGINE_TYPE").HasValue("AEngine");
                 });
 
             modelBuilder.Entity("Model.Entities.Airships.Engines.Motorization", b =>
@@ -98,16 +98,90 @@ namespace Model.Migrations
                         .HasColumnType("int")
                         .HasColumnName("AIRSHIP_ID");
 
-                    b.HasKey("EngineId", "AirshipId");
+                    b.Property<int>("Position")
+                        .HasColumnType("int")
+                        .HasColumnName("POSITION");
+
+                    b.Property<string>("DamageState")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("varchar(30)")
+                        .HasColumnName("DAMAGE_STATE");
+
+                    b.HasKey("EngineId", "AirshipId", "Position");
 
                     b.HasIndex("AirshipId");
 
                     b.ToTable("AIRSHIP_HAS_ENGINES_JT");
                 });
 
+            modelBuilder.Entity("Model.Entities.Airships.Weapons.Armory", b =>
+                {
+                    b.Property<int>("WeaponId")
+                        .HasColumnType("int")
+                        .HasColumnName("WEAPON_ID");
+
+                    b.Property<int>("AirshipId")
+                        .HasColumnType("int")
+                        .HasColumnName("SHIP_ID");
+
+                    b.Property<int>("Position")
+                        .HasColumnType("int")
+                        .HasColumnName("POSITION");
+
+                    b.Property<string>("DamageState")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("varchar(30)")
+                        .HasColumnName("DAMAGE_STATE");
+
+                    b.HasKey("WeaponId", "AirshipId", "Position");
+
+                    b.HasIndex("AirshipId");
+
+                    b.ToTable("SHIP_HAS_WEAPONS_JT");
+                });
+
+            modelBuilder.Entity("Model.Entities.Airships.Weapons.AWeapon", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("WEAPON_ID");
+
+                    b.Property<int>("AmmonitionCapacity")
+                        .HasColumnType("int")
+                        .HasColumnName("AMMONITION_CAPACITY");
+
+                    b.Property<int>("AttackValue")
+                        .HasColumnType("int")
+                        .HasColumnName("ATTACK_VALUE");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("NAME");
+
+                    b.Property<string>("Range")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("RANGE");
+
+                    b.Property<string>("WEAPON_TYPE")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("WEAPONS_ST");
+
+                    b.HasDiscriminator<string>("WEAPON_TYPE").HasValue("AWeapon");
+                });
+
             modelBuilder.Entity("Model.Entities.Airships.Engines.CombustionEngine", b =>
                 {
-                    b.HasBaseType("Model.Entities.Airships.Engines.Engine");
+                    b.HasBaseType("Model.Entities.Airships.Engines.AEngine");
 
                     b.ToTable("ENGINES_ST");
 
@@ -116,7 +190,7 @@ namespace Model.Migrations
 
             modelBuilder.Entity("Model.Entities.Airships.Engines.JetEngine", b =>
                 {
-                    b.HasBaseType("Model.Entities.Airships.Engines.Engine");
+                    b.HasBaseType("Model.Entities.Airships.Engines.AEngine");
 
                     b.ToTable("ENGINES_ST");
 
@@ -125,30 +199,83 @@ namespace Model.Migrations
 
             modelBuilder.Entity("Model.Entities.Airships.Engines.SteamEngine", b =>
                 {
-                    b.HasBaseType("Model.Entities.Airships.Engines.Engine");
+                    b.HasBaseType("Model.Entities.Airships.Engines.AEngine");
 
                     b.ToTable("ENGINES_ST");
 
                     b.HasDiscriminator().HasValue("STEAM");
                 });
 
+            modelBuilder.Entity("Model.Entities.Airships.Weapons.Bomb", b =>
+                {
+                    b.HasBaseType("Model.Entities.Airships.Weapons.AWeapon");
+
+                    b.ToTable("WEAPONS_ST");
+
+                    b.HasDiscriminator().HasValue("BOMB");
+                });
+
+            modelBuilder.Entity("Model.Entities.Airships.Weapons.ProjectileWeapon", b =>
+                {
+                    b.HasBaseType("Model.Entities.Airships.Weapons.AWeapon");
+
+                    b.ToTable("WEAPONS_ST");
+
+                    b.HasDiscriminator().HasValue("PROJECTILE");
+                });
+
+            modelBuilder.Entity("Model.Entities.Airships.Weapons.RapidFireWeapon", b =>
+                {
+                    b.HasBaseType("Model.Entities.Airships.Weapons.AWeapon");
+
+                    b.ToTable("WEAPONS_ST");
+
+                    b.HasDiscriminator().HasValue("RAPID_FIRE");
+                });
+
             modelBuilder.Entity("Model.Entities.Airships.Engines.Motorization", b =>
                 {
                     b.HasOne("Model.Entities.Airships.Airship", "Airship")
-                        .WithMany()
+                        .WithMany("MotorizationList")
                         .HasForeignKey("AirshipId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Model.Entities.Airships.Engines.Engine", "Engine")
+                    b.HasOne("Model.Entities.Airships.Engines.AEngine", "AEngine")
                         .WithMany()
                         .HasForeignKey("EngineId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("AEngine");
+
+                    b.Navigation("Airship");
+                });
+
+            modelBuilder.Entity("Model.Entities.Airships.Weapons.Armory", b =>
+                {
+                    b.HasOne("Model.Entities.Airships.Airship", "Airship")
+                        .WithMany("ArmoryList")
+                        .HasForeignKey("AirshipId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Model.Entities.Airships.Weapons.AWeapon", "Weapon")
+                        .WithMany()
+                        .HasForeignKey("WeaponId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Airship");
 
-                    b.Navigation("Engine");
+                    b.Navigation("Weapon");
+                });
+
+            modelBuilder.Entity("Model.Entities.Airships.Airship", b =>
+                {
+                    b.Navigation("ArmoryList");
+
+                    b.Navigation("MotorizationList");
                 });
 #pragma warning restore 612, 618
         }
