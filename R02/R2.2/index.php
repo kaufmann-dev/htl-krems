@@ -30,7 +30,7 @@
                             published VARCHAR(20) NOT NULL,
                             content TEXT NOT NULL,
                             link VARCHAR(50) NOT NULL
-                            );");
+                        );");
 
                         $conn->exec("INSERT INTO news (title, published, content, link)
                         VALUES
@@ -39,7 +39,8 @@
                             ('SURFKURS IN PODERSDORF – 2AHIT','3. August 2022','Die 2AHIT surfte in der letzten Schulwoche nicht im WWW sondern am Neusiedlersee!','https://www.htlkrems.ac.at/2022/08/03/surfkurs-in-podersdorf-2ahit/'),
                             ('AUFREGENDE TAGE FÜR DIE 1CHIT','10. Juli 2022','Montag Sport, Dienstag 10 km alkoholfreier Bierweg, Mittwoch NÖ Notrufzentrale!','https://www.htlkrems.ac.at/2022/07/10/aufregende-tage-fuer-die-1chit/'),
                             ('KINO 2021/22','9. Juli 2022','Filme schaut man am besten im Kino!','https://www.htlkrems.ac.at/2022/07/09/kino-2021-22/'),
-                            ('SPIEL UND SPASS IN BOWLINGHALLE UND BADEARENA!','9. Juli 2022','Die 1AHIT in der X-Bowl und Badearena Krems.','https://www.htlkrems.ac.at/2022/07/09/spiel-und-spass-in-bowlinghalle-und-badearena/');");
+                            ('SPIEL UND SPASS IN BOWLINGHALLE UND BADEARENA!','9. Juli 2022','Die 1AHIT in der X-Bowl und Badearena Krems.','https://www.htlkrems.ac.at/2022/07/09/spiel-und-spass-in-bowlinghalle-und-badearena/')
+                        ;");
 
                         $sth = $conn->prepare("SELECT * FROM news");
                         $sth->execute();
