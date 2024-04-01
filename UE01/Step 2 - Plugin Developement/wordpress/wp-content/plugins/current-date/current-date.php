@@ -16,5 +16,5 @@
 add_filter('the_content', 'addDateToEndOfThePost');
 
 function addDateToEndOfThePost($content){
-    return $content . "<p>" . (new DateTime('now')->format('d.m.Y')) . "</p>";
+    return $content . "<p>" . date('d.m.Y') . "</p>";
 }
