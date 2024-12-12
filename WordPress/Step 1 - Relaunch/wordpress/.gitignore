@@ -1,0 +1,18 @@
+# WordPress
+/wp-admin/
+/wp-content/index.php
+/wp-content/languages
+/wp-content/plugins/index.php
+/wp-content/themes/index.php
+/wp-includes/
+/index.php
+/license.txt
+/readme.html
+/wp-*.php
+/xmlrpc.php
+wp-config.php
+/wp-content/themes/
+/wp-content/plugins/
+/wp-content/uploads/
+*.log
+/.htaccess
