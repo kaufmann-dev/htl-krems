@@ -1,0 +1,4 @@
+<?php
+    $pdo = new PDO('mysql:host=[IP_ADDRESS]; dbname=[DB_NAME];charset=utf8',[USER],[PASSWORD]);
+    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+?>
