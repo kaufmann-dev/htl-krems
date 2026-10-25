@@ -1,0 +1,1 @@
+Das Projekt bezüglich Step 2 befinden sich lokal in meinem htdocs Ordner.
