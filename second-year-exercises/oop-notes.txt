@@ -1,0 +1,76 @@
+Programmierung angefangen 60. Jahren
+Programme wurden genauso geschrieben wie wir tun
+
+70. Jahre Softwarekrise
+Herausforderungen für Programme: immer komplexer, mehr machen, länger
+Programme die geschrieben wurden konnten mit zunehmender Länge nicht mehr gelesen werden
+
+Lösung: Objetkorientierung
+Aufgabe von Programm: Welt abbilden (z. B. Arzt: Patienten, Medikamente, etc. abbilden)
+
+Objekt kennzeichnet sich durch zwei Sachen: Zustand, Verhalten
+Jedes Programm: Variablen
+Zustand -> Summed der Werte, die in den Variablen des Objekts gespeichert werden
+Verhalten -> Wird beschrieben durch die Methoden des Objekts
+
+Wenn Objekte miteinander kommunizieren sollten sie nie auf den Zustand des Objekts zugreifen, sondern immer nur auf das Verhalten (müssen über Methoden kommunizieren).
+
+public, private, protected -> properties
+
+set -> wer darf verändern
+get -> was darf man lesen
+
+Lol : Uwl -> Lol ist ein Uwl
+this.x -> // bei x handelt es sich um variable des objekts
+
+private int x; => Variable, nicht öffentlich da verboten wegen Gründe
+public int X { get=> x; } => Propertie, hat Werte von Variable x
+
+Konstruktur -> jedes mal wenn neues objekt anlegen
+new -> im speicher für objekt plazu freigestellt
+
+zustand  -> gesamtheit der werte die in den variablen des objekt gepsichert werden
+methoden -> beschreiben verhalten des objekts
+ein feld ist ein ounkt
+
+this bezieht sich immer auf das objekt in dessen klasse ich mich befinde
+
+abstract -> nix gehen andere menscha sachen anlegen, alle kindklassen müssen die methode mit abstract implementieren
+
+: Point -> konstruktor von Point wird aufgerufen
+
+Variablen der Klasse beginnen mit _
+private readonly int _x -> kann nur bei anfang konstruktor gesetzt werden, dann nur lesen
+im konstruktor werden die werte für die variablen gesetzt
+
+test -> add new project -> unit test project (nennen "{name_des_urspünglichen_projekts}.unittest")
+Test-Bsp. mit Point:
+"
+public class Tests {
+	[SetUp]
+	public void Setup() {
+
+	}
+
+	[Test]
+	public void createPoint() {
+		Point p = new Point();
+		Assert.AreEqual("x: 4 y: 5", p.Info());
+	}
+
+	[Test]
+	public void TestPointLegal() {
+		Map map = new Map(new AField[7,7]);
+		Point p = new Point(12,12);
+		Assert.IsFalse(map.IsPointLegal(p));
+	}
+}
+"
+auf namen von klasse drücken -> shift + F6 -> klasse umbenennen
+AField -> Abstract Field
+von abstracte klasse kann man kein neues objekt anlegen
+wenn bei methode abstarct dabei steht heist das kindklassse von method eunbedingt überschrieben werden mjuss
+EType -> enum Type
+konstuktorverketten -> wenn konstruktor aufgerufen wird ruft er konstruktor von vaterklasse auf
+basisklasse -> vaterklasse
+kindklasse -> erbt von basisklasse

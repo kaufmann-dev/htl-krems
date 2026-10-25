@@ -1,0 +1,15 @@
+make website design with vue.js - 7 days
+
+make database - 7 days
+
+connect database with website with laravel - 14 days
+
+host locally with nginx - 7 days
+
+host on internet in google cloud - 7 days
+
+move to raspberry pi and host on internet - 7 days
+
+done - after 49 days
+
+(always document commands and how it works)

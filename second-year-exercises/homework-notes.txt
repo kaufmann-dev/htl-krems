@@ -1,0 +1,37 @@
+public class Apple {
+	private string _name;
+	private int _weight;
+	private string _color;
+
+	public Name { get; set; }
+	public Weight { get; set; }
+	public Color { get; set; }
+
+	public Apple(string name, int weight, string color) {
+		this.Name = name;
+		this.Weight = weight,
+		this.Color = color;
+	}
+	public string ToString() {
+		return $"Name: {this.Name} Weight: {this.Weight} Color: {this.Color}";
+	}
+	public bool Equals(Apple a) {
+		if(a.Name == this.Name && a.Weight == this.Weight && a.Color == this.Color) {
+			return true;
+		}
+		return false;
+	}
+}
+
+[Test]
+
+Apple a = new Apple("Apfeline", 6, "blue");
+Apple b = new Apple("Äpfil", 7, "red");
+Apple c = new Apple("Apfeline", 6, "blue");
+
+string str = "Name: Apfeline Weight: 6 Color: blue";
+
+
+Assert.IsFalse(a.Equals(b));
+Assert.IsTrue(a.Equals(c));
+Assert.IsTrue(a.ToString == str);
