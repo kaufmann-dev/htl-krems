@@ -139,6 +139,7 @@ These projects were written as school exercises and have not been updated for cu
 | [`php-guestbook`](php-guestbook/)                                 | PHP guestbook with create and delete plus an AJAX test                                                 |
 | [`php-js-exercises`](php-js-exercises/)                           | Web development coursework exercises covering AJAX, jQuery modals, PHP sessions, and OOP               |
 | [`php-oop-bank-accounts`](php-oop-bank-accounts/)                 | PHP 7 OOP exercises (accounts, customers, interfaces) organized by chapter                             |
+| [`php-smtp-mailer`](php-smtp-mailer/)                             | PHP script that sends HTML mail over SMTP with PHPMailer                                               |
 | [`php-superglobals-demo`](php-superglobals-demo/)                 | PHP exercise demonstrating $_GET superglobals for page routing and dynamic grid generation             |
 | [`php-wordpress-exercises`](php-wordpress-exercises/)             | PHP exercises and step-by-step WordPress plugin/theme development how-to guides                        |
 | [`trackstar-issue-tracker`](trackstar-issue-tracker/)             | PHP project management tracker with full CRUD for projects and issues backed by MySQL                  |
