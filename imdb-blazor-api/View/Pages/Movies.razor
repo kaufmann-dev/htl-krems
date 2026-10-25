@@ -1,0 +1,57 @@
+@page "/movies"
+@using Model.Entity
+@using Domain.Repository
+
+@inject IMovieRepository _movieRepository
+
+<div class="container">
+    <div class="row mt-2">
+        <NavLink href="createmovie" class="btn btn-info">Create Movie</NavLink>
+    </div>
+    <div class="row mt-5">
+        <div class="col-4">
+            <h4 class="card-title text-info">Movielist</h4>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-sm table-bordered">
+            <thead class="bg-info text-white">
+            <tr>
+                <th>Name</th>
+                <th>Duration</th>
+                <th>Description</th>
+                <th>Release Date</th>
+                <th>Remove</th>
+            </tr>
+            </thead>
+            <tbody class="text-muted">
+            @foreach (var movie in MovieList)
+            {
+                <tr>
+                    <td>@movie.Name</td>
+                    <td>@movie.Duration minutes</td>
+                    <td>@movie.ShortDescription</td>
+                    <td>@movie.ReleaseDate.ToString("MM/dd/yyyy")</td>
+                    <td><button class="btn btn-danger btn-sm" @onclick="@(() => Remove(movie))">Remove</button></td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@code {
+    public List<Movie> MovieList { get; set; }
+
+    protected override void OnInitialized()
+    {
+        MovieList = (_movieRepository.Get(m=>true)).ToList();
+    }
+    
+    void Remove(Movie movie) {
+       
+        _movieRepository.Delete(movie);
+        MovieList.Remove(movie);
+    }
+}
