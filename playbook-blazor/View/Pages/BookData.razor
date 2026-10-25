@@ -1,0 +1,36 @@
+@page "/bookdata/{BookId:int}"
+@using Model.Entities
+@using Domain.Repositories.Interfaces
+@using System.Data
+@inject IBookRepository _bookRepository
+@inject IRepository<RuleSection> _ruleRepository
+
+<div class="container">
+    @if (Book is not null) {
+        <h3 class="display-3">@Book.Title</h3>
+        @foreach (var bookAuthor in Book.BookAuthorList) {
+            @bookAuthor.Author<br/>
+        }
+        <br/>
+        @((MarkupString)StoryContent?.Content)
+        <a href="storysections/3">
+            <button class="btn btn-warning">Start Journey</button>
+        </a> 
+    }
+    else {
+        <span>Loading ...</span>
+    }
+</div>
+@code {
+    [Parameter]
+    public int BookId { get; set; }
+
+    public Book? Book { get; set; }
+
+    public RuleSection StoryContent { get; set; }
+
+    protected override async Task OnParametersSetAsync() {
+        Book = await _bookRepository.ReadGraphAsync(BookId);
+        StoryContent = (await _ruleRepository.ReadAsync(rr => rr.BookId == BookId && rr.SectionType == ESectionType.THE_STORY_SO_FAR))[0];
+    }
+}
