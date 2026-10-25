@@ -1,0 +1,30 @@
+﻿@page "/armyadmin"
+@using Domain.Repositories.Interfaces
+@using Model.Entities.Armies
+@inject IArmyRepository _repository;
+@inject NavigationManager _manager;
+
+<h3>ArmyAdmin</h3>
+<EditForm Model="Army" OnInvalidSubmit="() => Insert()">
+    <label>Name</label>
+    <InputText @bind-Value="Army.Label"></InputText>
+    
+    <button type="submit" class="btn btn-primary">Create</button>
+</EditForm>
+
+
+@code {
+    public Army Army { get; set; } = new();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        // leer?
+    }
+
+    private void Insert()
+    {
+        _repository.Create(Army);
+        _manager.NavigateTo($"/armies/{Army.Id}");
+    }
+
+}

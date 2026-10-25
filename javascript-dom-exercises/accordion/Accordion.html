@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".dt1").click(function(){
+                //Beim Click auf "dt" müssen 2 Dinge passieren:
+                //1) das NÄCHSTE ELEMENT (dd) muss eingablendet / ausgeblendet weren, verwende dazu die JQ Funktion "slideToggle".
+                //2) die Klasse des KINDELEMENTS muss von closed auf open wechseln. Verwende dazu die JQ Funktion "toggleClass".
+            });
+
+            $(".dt2").click(function(){
+                //Wie oben, nur dass jetzt zuerst die offenen Accordions geschlossen werden sollen! Sieh dir dazu die JQ Funktion "slideUp" an.
+            });
+        });
+    </script>
+    <style>
+        dd { display:none; }
+        .closed { background:red; }
+        .open { background:green; }
+    </style>
+</head>
+<body>
+    <dl>
+        <dt class="dt1">Hier steht die Überschrift 1<a href="#" class="closed">Details</a></dt>
+        <dd class="dd1">Hier steht die detallierte Beschreibung. Dieser Text wird erst nach einem Klick auf das übergeordnete Elemente (dt) eingeblendet. Parallel wird auch die Klasse des Links gewechselt um den Pfeil zu drehen.</dd>
+        <dt class="dt1">Hier steht die Überschrift 2<a href="#" class="closed">Details</a></dt>
+        <dd class="dd1">Hier steht die detallierte Beschreibung. Dieser Text wird erst nach einem Klick auf das übergeordnete Elemente (dt) eingeblendet. Parallel wird auch die Klasse des Links gewechselt um den Pfeil zu drehen.</dd>
+        <dt class="dt1">Hier steht die Überschrift 3<a href="#" class="closed">Details</a></dt>
+        <dd class="dd1">Hier steht die detallierte Beschreibung. Dieser Text wird erst nach einem Klick auf das übergeordnete Elemente (dt) eingeblendet. Parallel wird auch die Klasse des Links gewechselt um den Pfeil zu drehen.</dd>
+
+        <br>
+
+        <dt class="dt2">Hier steht die Überschrift 1<a href="#" class="closed">Details</a></dt>
+        <dd class="dd2">Hier steht die detallierte Beschreibung. Dieser Text wird erst nach einem Klick auf das übergeordnete Elemente (dt) eingeblendet. Parallel wird auch die Klasse des Links gewechselt um den Pfeil zu drehen.</dd>
+        <dt class="dt2">Hier steht die Überschrift 2<a href="#" class="closed">Details</a></dt>
+        <dd class="dd2">Hier steht die detallierte Beschreibung. Dieser Text wird erst nach einem Klick auf das übergeordnete Elemente (dt) eingeblendet. Parallel wird auch die Klasse des Links gewechselt um den Pfeil zu drehen.</dd>
+        <dt class="dt2">Hier steht die Überschrift 3<a href="#" class="closed">Details</a></dt>
+        <dd class="dd2">Hier steht die detallierte Beschreibung. Dieser Text wird erst nach einem Klick auf das übergeordnete Elemente (dt) eingeblendet. Parallel wird auch die Klasse des Links gewechselt um den Pfeil zu drehen.</dd>
+    </dl>
+</body>
+</html>

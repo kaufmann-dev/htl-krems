@@ -1,0 +1,145 @@
+* {font-family: 'Montserrat', sans-serif;}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin:0px;
+}
+
+#container {
+	width:60vw;
+	background-color: #ccc;
+	border: 0.1vw solid #003647;
+	margin: 0px auto;
+}
+
+#start {
+  width:60vw;
+  height: 25vw;
+  background-image: url('bg.jpg');
+  height: 25vw;
+  background-position: center;
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  position: relative;
+
+} 
+nav {
+	width:60vw;
+	height:2.2vw;
+	background-color: #003647;
+	color: #fff;
+	position: sticky;
+	top:0px;
+}
+
+h1 {
+	font-family: 'Inconsolata', monospace;
+	font-size: 3vw;
+	margin: 0vw;
+}
+
+.odd {
+	margin-top:0vw;
+	padding:3vw;
+	
+	width:54vw;
+	height:50vw;
+	background-color: #90c7bb;
+	color: #000;
+}
+.even {
+	padding:3vw;
+	width:54vw;
+	height:50vw;
+	background-color: #b4e9f9;
+	color: #000;
+}
+
+
+
+a {	
+	font-family: 'Inconsolata', monospace;
+	margin-left: 2vw;
+	display: block;
+	float: left;
+	color: #a9c4d8;
+	font-size: 1.5vw;
+	text-decoration: none;
+	padding-top: 0.3vw;
+	vertical-align: center;
+}
+
+a:hover {
+	color: #fff;
+}
+
+.myarticle {
+	display: flex;
+	flex-direction: row;
+	padding: 0.5vw;
+	border: 0.0vw solid #003647;
+	/* background-color: #dcf6fe; */
+}
+
+
+.headline {
+	flex: 1;
+	border-right: 0.1vw solid #003647;
+}
+
+.textarea {
+	padding-left: 1vw;
+	padding-right: 1vw;
+	font-size: 1vw;
+	flex: 1;
+	border-right: 0.1vw solid #003647;
+}
+
+.textarea p {
+	margin: 0vw;
+	text-align: justify;
+	}
+
+.picture {
+	flex: 1;
+	margin-left: 1vw;
+	margin-right: 1vw;
+	background-image: url('welcome.jpg');
+	background-position: top;
+  	/* background-repeat: no-repeat; */
+  	background-size: contain;
+  	background-repeat: no-repeat;
+}
+
+.picture_welcome {
+	background-image: url('welcome.jpg');
+}
+
+.picture_prod {
+	background-image: url('product.jpg');	
+}
+
+.picture_example {
+	background-image: url('example.jpg');
+}
+
+.picture_impressum {
+	background-image: url('impressum.jpg');
+}
+
+
+/*
+#87b4ff hellblau
+#91aae6 mittelblau
+#4574a4 jeansblau
+#a9c4d8 stahlgrau
+#003647 dunkeltürkis
+#b9d8c3 lindgrün
+
+font-family: 'Inconsolata', monospace;
+font-family: 'Fredoka One', cursive;
+
+*/

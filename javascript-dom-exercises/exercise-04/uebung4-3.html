@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <textarea id="text">te st</textarea>
+    <button id="break">Zerteile</button>
+    <ul id="list">
+    </ul>
+    <script>
+        document.getElementById("break").addEventListener("click", function () {
+            let fulltext = document.getElementById("text").value;
+            let brokentext = fulltext.split(" ");
+            for (let i = 0; i < brokentext.length; i++) {
+                let text = brokentext[i];
+                let name =  document.createTextNode(text);
+                let li = document.createElement("LI");
+                li.appendChild(name);
+                document.getElementById("list").appendChild(li);
+            }
+        });
+    </script>
+</body>
+</html>

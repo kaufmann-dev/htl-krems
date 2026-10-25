@@ -1,0 +1,156 @@
+* {
+	font-family: 'Inconsolata', 'Comic Sans', sans-serif;
+	transition: 2s;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+}
+
+h1 {
+	font-size: 2.5vw;
+	margin: 0;
+}
+
+#container {
+	width: 60vw;
+	background-color: #ccc;
+	margin: 0px auto;
+	animation-name: bratan;
+    animation-duration: 1s;
+    position: relative;
+}
+
+#start {
+  height: 30vw;
+  width: 60vw;
+  background-image: url('boy.jpg');
+  background-position: center;
+  /*background-repeat: no-repeat;*/
+  background-size: cover;
+  position: relative;
+
+}
+
+nav {
+	display: flex;	
+	flex-direction: row;
+	width: 60vw;
+	height: 2vw;
+	background-color: #333;
+	color: #fff;
+	position: sticky;
+	top: 0px;
+}
+
+.odd {
+	margin-top: 0vw;
+	padding: 3vw;
+	width: 54vw;
+	height: 50vw;
+	/*background-color: #ffcc99;*/
+	color: #000;
+	background-color: red;
+    animation-name: example;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.even {
+	padding: 3vw;
+	width: 54vw;
+	height: 50vw;
+	/*background-color: #ffbf80;*/
+	color: #000;
+	background-color: red;
+    animation-name: bruh;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.space {
+	width: 4vw;
+	flex: 2;
+}
+
+a {
+	padding-top: 0.25vw;
+	text-align: center;
+	flex: 1;
+	margin-left: 2vw;
+	margin-right: 2vw;
+	color: #ffd9b3;
+	font-size: 1.3vw;
+	text-decoration: none;
+	transition: 1s;
+}
+
+a:hover {
+	color: #fff;
+	font-size: 1.5vw;
+}
+
+article {
+	display: flex;
+	flex-direction: row;
+}
+
+.headline {
+	padding-right: 2vw;
+	flex: 1;
+	border-right: 0.1vw solid #333;
+	margin-right: 2vw;
+}
+
+.text {
+	padding-right: 2vw;
+	font-size: 1vw;
+	border-right: 0.1vw solid #333;
+	flex: 1;
+}
+
+.text p {
+	margin: 0;
+}
+
+.image {
+	margin-left: 2vw;
+	flex: 1;
+	background-image: url('bg.jpg');
+	background-size: cover;
+}
+
+@keyframes example {
+  0%   {background-color: #ff0066;}
+  25%  {background-color: #ff5050;}
+  50%  {background-color: #990033;}
+  75%  {background-color: #ff9933;}
+  100% {background-color: #ff0066;}
+}
+
+@keyframes bruh {
+  0%   {background-color: #009933;}
+  25%  {background-color: #cccc00;}
+  50%  {background-color: #339966;}
+  75%  {background-color: #996633;}
+  100% {background-color: #009933;}
+}
+
+@keyframes bratan {
+  0%   {top:0px;}
+  50%  {top:1000px;}
+  100% {top:0px;}
+}
+
+/*
+#87b4ff -> hellblau
+#91aae6 -> mittelblau
+#4575a4 -> jeansblau
+#a9c4d8 -> stahlblau
+#003674 -> dunkeltürkis
+#b9d8c3 -> lindgrün
+*/

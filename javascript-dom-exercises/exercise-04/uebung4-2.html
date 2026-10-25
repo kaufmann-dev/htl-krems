@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <textarea id="text">te st</textarea>
+    <button id="break">Zerteile</button>
+    <script>
+        document.getElementById("break").addEventListener("click", function () {
+            let fulltext = document.getElementById("text").value;
+            let brokentext = fulltext.split(" ");
+            console.log(brokentext);
+        });
+    </script>
+</body>
+</html>

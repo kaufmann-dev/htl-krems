@@ -1,0 +1,71 @@
+body {
+	padding: 20px 20px 500px 20px;
+	margin: 0;
+	background-color: #fff;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+	outline: none;
+	line-height: 1.6;
+}
+section {
+	width: 800px;
+	margin: 0 auto;
+	border: 1px solid #777;
+	padding: 13px;
+	background-color: #f7f7f7;
+	border-radius: 5px;
+}
+section:not(:last-child) {
+	margin-bottom: 13px;
+}
+button {
+	border: 1px solid rgb(36, 103, 214);
+	background-color: rgb(66, 133, 244);
+	color: #fff;
+	font-weight: 700;
+	border-radius: 500px;
+	padding: 4px 8px;
+	transition: 0.3s;
+	cursor: pointer;
+}
+button:not(.noMargin) {
+	margin-top: 10px;
+}
+button:hover {
+	background-color: rgb(36, 103, 214);
+}
+hr {
+	border: none;
+	height: 1px;
+	background-color: #000;
+}
+h1 {
+	margin: 0;
+	color: rgb(36, 103, 214);
+	cursor: pointer;
+}
+h1:hover {
+	color: rgb(6, 73, 184);
+}
+h3 {
+	margin: 0;
+}
+ul {
+	margin: 0;
+}
+div.border {
+	padding: 10px;
+	border: 1px solid #777;
+	margin-top: 10px;
+	border-radius: 5px;
+	background-color: #eee;
+}
+div.wrapper {
+	display: none;
+}
+div.spacer {
+	height: 10px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');

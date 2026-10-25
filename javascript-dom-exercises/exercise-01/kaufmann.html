@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Test</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var a = 14; //int
+		var b = "Hello World!"; //string
+		var c = true; //bool
+		var u = 4.464; //float
+
+		document.write("Int: " + a + "<br>");
+		document.write("String: " + b + "<br>");
+		document.write("Bool: " + c + "<br>");
+		document.write("Float: " + u + "<br>");
+	</script>
+	<script type="text/javascript">
+		var vorname = prompt("Geben Sie Ihren Vornamen ein!","");
+		var nachname = prompt("Geben Sie Ihren Nachnamen ein!","");
+
+		alert("Hallo " + vorname +", dein Nachname ist " + nachname + "!");
+	</script>
+	<script type="text/javascript">
+		var eins = prompt("Geben Sie eine Nummer ein!","");
+		var zwei = prompt("Geben Sie eine Nummer ein!","");
+		var eins = parseInt(eins, 10);
+		var zwei = parseInt(zwei, 10);
+		var ergebnis = eins + zwei;
+		alert("Das Ergebnis ist " + ergebnis +"!");
+	</script>
+	<script type="text/javascript">
+		var lol = prompt("Geben Sie das jetztige Jahr ein!","");
+		var lol = parseInt(lol, 10);
+		var schaltjahr = false;
+		if (lol%400 == 0) {
+			schaltjahr = true;
+		}
+		else {
+			if (lol%4 == 0 && lol%100 !== 0) {
+				schaltjahr = true;
+			}
+		}
+		if (schaltjahr == true) {
+			alert("Dies ist ein schaltjahr!");
+		}
+		else {
+			alert("Dies ist KEIN schaltjahr!");
+		}
+	</script>
+</body>
+</html>

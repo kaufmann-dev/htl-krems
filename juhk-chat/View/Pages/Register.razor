@@ -1,0 +1,55 @@
+﻿@page "/register"
+@using Domain.Repositories.Interfaces
+@using Model.Entities
+@inject IUserRepository _userRepository;
+@inject NavigationManager _navigation
+
+<div class="container">
+    <h3>Register</h3>
+    <EditForm Model="User" OnValidSubmit="async () => await CreateAsync()" class="form">
+        <DataAnnotationsValidator/>
+        <ValidationSummary></ValidationSummary>
+        <div class="form-row row">
+            <div class="form-group col-md-4">
+                <label class="small text-muted">Name</label>
+                <InputText class="form-control form-control-sm" @bind-Value="@User.Name"/>
+                <ValidationMessage style="font-size: small; margin-top: 4pt" For="() => User.Name"/>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="small text-muted">Tag</label>
+                <InputText class="form-control form-control-sm" @bind-Value="@User.Tag"/>
+                <ValidationMessage style="font-size: small; margin-top: 4pt" For="() => User.Tag"/>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="small text-muted">Password</label>
+                <InputText class="form-control form-control-sm" @bind-Value="@User.Password"/>
+                <ValidationMessage style="font-size: small; margin-top: 4pt" For="() => User.Password"/>
+            </div>
+        </div>
+
+        <div class="form-row mt-3">
+            <button class="btn btn-primary" type="submit">Register</button>
+        </div>
+    </EditForm>
+    
+    <div class="alert alert-success mt-2" role="alert" style="@successAlertStyle">
+        Success - Created User @User.Name
+    </div>
+</div>
+
+@code {
+    private string successAlertStyle = "display: none;";
+    
+    private User User { get; set; } = new();
+
+    public async Task CreateAsync()
+    {
+        User.PgpActive = false;
+        User.XmrActive = false;
+        User.CreationDate = DateTime.Now;
+        User = await _userRepository.CreateAsync(User);
+        Console.WriteLine("successfully created user");
+        successAlertStyle = "display: block;";
+        //_navigation.NavigateTo("/");
+    }
+}

@@ -1,0 +1,139 @@
+#myBtn {
+	display: none;
+	position: fixed;
+	bottom: 1.3vw;
+	right: 1.9vw;
+	z-index: 99;
+	border: none;
+	outline: none;
+	background-color: red;
+	color: white;
+	cursor: pointer;
+	padding: 1vw;
+	border-radius: 0.7vw;
+	font-size: 1.3vw;
+}
+#myBtn:hover {
+	background-color: #555;
+}
+body {
+	background-image: url("snow.jpg");
+	background-repeat: repeat;
+	background-size: 20vw;
+}
+h2 {
+	font-family: Times New Roman;
+}
+p {
+	font-family: Verdana;
+}
+div.a {
+	width: 70%;
+	margin: 1vw auto;
+	background-color: #1e90ff;
+	padding: 15px;
+	text-align: center;
+	font-size: 4vw;
+	border: 0.1vw solid black;
+	font-family: Oswald;
+}
+div.b {
+	width: 70%;
+	margin: 1vw auto;
+	background-color: #555555;
+	color: white;
+	padding: 15px;
+	text-align: center;
+	font-size: 2vw;
+	border: 0.1vw solid black;
+}
+div.c {
+	width: 70%;
+	margin: 1vw auto;
+	padding: 15px;
+	background-color: #eeeeee;
+	border: 0.1vw solid black;
+}
+div.d {
+	background-color: rgba(255,255,255,30%);
+	width: 70%;
+	margin: 1vw auto;
+	padding: 15px;
+	text-align: center;
+	font-size: 3vw;
+	border: 0.1vw solid black;
+	font-family: Oswald;
+}
+a.a {
+	color: white;
+	text-decoration: none;
+	font-family: Times New Roman;
+}
+a:hover.a {
+	color: #1e90ff;
+	background-color: #646464;
+}
+a:active.a {
+	color: white;
+	background-color: black;
+}
+a.b {
+	color: black;
+	text-decoration: none;
+	font-family: Times New Roman;
+	font-size: 15px;
+	background-color: rgba(255,255,255,50%);
+}
+a:hover.b {
+	color: white;
+	background-color: rgba(0,0,0,50%);
+}
+a:active.b {
+	color: white;
+	background-color: black;
+}
+a.c {
+	color: black;
+	text-decoration: none;
+	font-family: Times New Roman;
+	font-size: 15px;
+	background-color: rgba(255,255,255,50%);
+}
+a:hover.c {
+	color: #1e90ff;
+	background-color: rgba(0,0,0,50%);
+}
+a:active.c {
+	color: white;
+	background-color: black;
+}
+a.d {
+	color: black;
+	text-decoration: none;
+	font-family: Times New Roman;
+	font-size: 15px;
+	background-color: rgba(255,255,255,50%);
+}
+a:hover.d {
+	color: #ff1e1e;
+	background-color: rgba(0,0,0,50%);
+}
+a:active.d {
+	color: white;
+	background-color: black;
+}
+a.e {
+	color: black;
+	text-decoration: none;
+	font-family: Times New Roman;
+	font-size: 15px;
+	background-color: rgba(255,255,255,50%);
+}
+a:hover.e {
+	color: #53ff1e;
+	background-color: rgba(0,0,0,50%);
+}
+a:active.e {
+	color: white;
+	background-color: black;
+}

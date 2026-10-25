@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Musterprojektname</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="myscript.js"></script>
+</head>
+<body>
+	<section>
+		<h1>Terminverwaltung</h1>
+		<div class="wrapper"><hr>
+			Datum: <input type="date" name="date" value="2020-12-21">
+			<h2>Termine:</h2>
+			<div class="border">
+				<span>Datum:</span> 21. Dez. 2020<br>
+				<span>Uhrzeit:</span>  18:00 Uhr<br>
+				<span>Dauer:</span> 3 Stunden<br>
+				<span>Ort:</span> Veranstaltungssaal 2<br>
+				<span>Typ:</span> Vortrag<br>
+				<span>Beschreibung:</span> Abschließender Vortrag vom Geschäftsführer zum Weihnachtsgeschäft
+			</div>
+			<div class="border">
+				<span>Datum:</span> 21. Dez. 2020<br>
+				<span>Uhrzeit:</span>  08:00 Uhr<br>
+				<span>Dauer:</span> 1 Stunde<br>
+				<span>Ort:</span> Veranstaltungssaal 3<br>
+				<span>Typ:</span> Meeting<br>
+				<span>Beschreibung:</span> Meeting zum Wochenstart
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h1>Personalverwaltung</h1>
+		<div class="wrapper"><hr>
+			Mitarbeiter: <input type="text" name="mitarbeiter" value="Max Mustermann"><br><br>
+			<div class="border">
+				<h2>Max Mustermann</h2>
+				<span>Name:</span> Max Mustermann<br>
+				<span>Alter:</span> 21<br>
+				<span>Position:</span> Programmierer<br>
+				<span>Abteilung:</span> Softwareentwicklung<br>
+				<span>Monatsgehalt (brutto):</span> 3.000€
+
+				<button class="block">Einteilen</button>
+				<button class="block">Befördern</button>
+				<button class="block">Feuern</button>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h1>Gewinn-Verlust-Rechnung</h1>
+		<div class="wrapper"><hr>
+			Jahr: <input type="number" name="jahr" value="2019"><br><br>
+			<div class="border">
+				<h2>Ausgaben</h2>
+				<span>Essen:</span> 29.000€<button class="expand">expand details</button><br>
+				<span>Gehalt von Mitarbeiter:</span> 213.000€<button class="expand">expand details</button><br>
+				<span>Papier:</span> 2.000€<button class="expand">expand details</button><br>
+				<span>Computer:</span> 32.000€<button class="expand">expand details</button><br>
+				<span>Miete:</span> 85.000€<button class="expand">expand details</button><br><br>
+				<span>Insgesamt:</span> 361.000€
+			</div>
+			<div class="border">
+				<h2>Einnahmen</h2>
+				<span>Varius-Software:</span> 500.000€<button class="expand">expand details</button><br>
+				<span>Beratung:</span> 61.000€<button class="expand">expand details</button><br>
+				<span>Software-Pakete für Firmen:</span> 81.000€<button class="expand">expand details</button><br><br>
+				<span>Insgesamt:</span> 642.000€
+			</div>
+			<h2>Gewinn: 281.000€</h2>
+		</div>
+	</section>
+</body>
+</html>

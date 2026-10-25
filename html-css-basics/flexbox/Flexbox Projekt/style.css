@@ -1,0 +1,165 @@
+/* Basic Styling */
+* {
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	margin: 0px;
+	box-sizing: border-box;
+	background-color: #333;
+}
+
+h1 {
+	font-size: 60px;
+	font-family: 'Oswald', sans-serif;
+	color: white;
+	margin: 0px;
+}
+
+h2 {
+	margin-top: 0px;
+	color: #3366ff;
+	font-family: 'Roboto Slab', serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+hr {
+	border: 1px solid black;
+}
+
+header {
+	text-align: center;
+	width: 100%;
+	padding: 50px 0px;
+	background-image: linear-gradient(to right, #FF512F, #DD2476);
+}
+
+footer {
+	border-bottom: 1px solid #444;
+	width: 100%;
+	text-align: center;
+	color: white;
+	margin-top: 40px;
+	padding: 10px 0px;
+	background-color: #333;
+}
+
+/* Advanced Styling */
+p#saying {
+	margin-bottom: 0px;
+	font-size: 30px;
+	color: white;
+}
+
+div#wrapper {
+	margin: 0;
+	padding: 0;
+	background-color: white;
+}
+/* Navbar */
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	border-top: 3px solid transparent;
+	border-bottom: 3px solid transparent;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+}
+
+li a:hover:not(.nohover) {
+  border-bottom: 3px solid red;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+li a.active {
+	border-bottom: 3px solid red;
+}
+
+li.floatright {
+	float: right;
+}
+
+/* Flex */
+article.springtime {
+	border: 1px solid black;
+	padding: 20px;
+	flex: 4;
+	background-color: #f0f0f0;
+	min-height: 300px;
+}
+
+#article_box {
+	display: flex;
+	flex: 10;
+	flex-direction: row;
+}
+
+aside {
+	flex: 4;
+}
+
+p {
+	color: black;
+}
+
+article {
+	flex: 4;
+	background-color: lightblue; 
+}
+
+article.springtime:hover {
+	box-shadow: 0px 0px 5px 0px rgba(40, 114, 240, 0.3);
+}
+
+article p, article h2:hover {
+	cursor: pointer;
+}
+
+article h2:hover {
+	color: #3388ff;
+}
+
+@media (max-width: 700px) {
+	#article_box {
+		flex-direction: column;
+	}
+	div.article {
+		padding: 40px 0 0 0;
+		margin: 20px;
+	}
+	article.springtime {
+		margin-bottom: 20px !important;
+	}
+	article.last {
+		margin: 0px !important;
+	}
+}
+
+@media (min-width: 700px) {
+	article.springtime {
+		margin-right: 20px;
+	}
+	article.last {
+		margin-right: 0px !important;
+	}
+	div.article {
+		width: 70%;
+		margin: 0px auto;
+		padding: 40px 0 0 0;
+	}
+}

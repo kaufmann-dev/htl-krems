@@ -1,0 +1,35 @@
+#dummy-text {
+    border: 1px solid #000;
+    height: 150px;
+    overflow: hidden;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+}
+.h450 {
+    font-size: 50px;
+    text-align: center;
+}
+.sec30 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.sec7030 {
+    padding-top: 70px;
+    padding-bottom: 30px;
+}
+.sec3014 {
+    padding-top: 70px;
+    padding-bottom: 14px;
+}
+.bg1 {
+    background-color: rgb(255,255,200);
+}
+.bg2 {
+    background-color: rgb(255,200,200);
+}
+.bg3 {
+    background-color: rgb(200,255,255);
+}
+.bg4 {
+    background-color: rgb(200,255,200);
+}

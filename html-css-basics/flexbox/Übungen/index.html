@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Flexbox Layout</title>
+  <link href="design.css" rel="stylesheet">
+</head>
+<body>
+
+  <style>
+    #bereich1 {
+      border: 1px solid grey;
+      font-size: 5em;
+      display:flex;
+      flex-direction:column;
+     
+
+    }
+    #bereich1 p:nth-child(1) { background-color: red; flex:1; margin: 20px;}
+    #bereich1 p:nth-child(2) { background-color: orange; flex:2; margin: 20px;}
+    #bereich1 p:nth-child(3) { background-color: limegreen; flex:1; margin: 20px; }
+    /* Kommentar im CSS-Bereich*/ 
+
+  </style>
+<!-- Kommentar -->
+  <div id="bereich1">
+    <p>Kopf</p>
+    <p>Inhalt</p>
+    <p>Fuß</p>
+  </div>
+
+</body>
+</html>

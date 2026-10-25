@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><groups>
+    <group id="A">
+        <team goalkeeper="FRA" defense="6" midfield="5" attack="6">FRA</team>
+        <team goalkeeper="ROU" defense="6" midfield="8" attack="4">ROU</team>
+        <team goalkeeper="ALB" defense="6" midfield="9" attack="4">ALB</team>
+        <team goalkeeper="SUI" defense="5" midfield="7" attack="4">SUI</team>
+    </group>
+    <group id="B">
+        <team goalkeeper="ENG" defense="6" midfield="7" attack="5">ENG</team>
+        <team goalkeeper="RUS" defense="7" midfield="6" attack="3">RUS</team>
+        <team goalkeeper="WAL" defense="7" midfield="6" attack="4">WAL</team>
+        <team goalkeeper="SVK" defense="8" midfield="10" attack="2">SVK</team>
+    </group>
+    <group id="C">
+        <team goalkeeper="GER" defense="6" midfield="9" attack="3">GER</team>
+        <team goalkeeper="UKR" defense="6" midfield="9" attack="2">UKR</team>
+        <team goalkeeper="POL" defense="5" midfield="9" attack="2">POL</team>
+        <team goalkeeper="NIR" defense="7" midfield="6" attack="4">NIR</team>
+    </group>
+    <group id="D">
+        <team goalkeeper="ESP" defense="5" midfield="8" attack="4">ESP</team>
+        <team goalkeeper="CZE" defense="6" midfield="9" attack="3">CZE</team>
+        <team goalkeeper="TUR" defense="5" midfield="9" attack="3">TUR</team>
+        <team goalkeeper="CRO" defense="7" midfield="7" attack="5">CRO</team>
+    </group>
+    <group id="E">
+        <team goalkeeper="BEL" defense="7" midfield="4" attack="8">BEL</team>
+        <team goalkeeper="ITA" defense="6" midfield="9" attack="5">ITA</team>
+        <team goalkeeper="IRL" defense="6" midfield="8" attack="3">IRL</team>
+        <team goalkeeper="SWE" defense="5" midfield="7" attack="3">SWE</team>
+    </group>
+    <group id="F">
+        <team goalkeeper="POR" defense="8" midfield="7" attack="5">POR</team>
+        <team goalkeeper="ISL" defense="6" midfield="5" attack="5">ISL</team>
+        <team goalkeeper="AUT" defense="6" midfield="9" attack="3">AUT</team>
+        <team goalkeeper="HUN" defense="7" midfield="7" attack="6">HUN</team>
+    </group>
+</groups>

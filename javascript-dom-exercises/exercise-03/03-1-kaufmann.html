@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Events</title>
+	<script>
+		document.addEventListener("DOMContentLoaded", function(){
+			document.getElementById("x").addEventListener("click", function() {
+				alert("Old style handling");
+			});
+		});
+	</script>
+</head>
+<body>
+	<button id="x">Click me!</button>
+</body>
+</html>

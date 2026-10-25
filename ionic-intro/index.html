@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Würfelspiel</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+</head>
+<body>
+    <ion-app>
+        <ion-header>
+            <ion-toolbar>
+              <ion-title>Würfelspiel</ion-title>
+            </ion-toolbar>
+          </ion-header>
+        <ion-grid style="width: 50%;">
+            <ion-row style="width: 800px; max-width: 100%;">
+                <ion-col>
+                    <ion-card>
+                        <ion-card-header>
+                            <ion-card-title style="text-align: center;">Player 1</ion-card-title>
+                        </ion-card-header>
+                        <ion-card-content style="text-align: center;">
+                            <span id="p1"></span>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+                <ion-col style="text-align: center;">
+                    <ion-card>
+                        <ion-card-header>
+                            <ion-card-title style="text-align: center;">Roll the dice</ion-card-title>
+                        </ion-card-header>
+                        <ion-card-content>
+                            <ion-button id="clickbtn"><ion-icon name="dice-outline"></ion-icon></ion-button>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+                <ion-col>
+                    <ion-card>
+                        <ion-card-header>
+                            <ion-card-title style="text-align: center;">Player 2</ion-card-title>
+                        </ion-card-header>
+                        <ion-card-content style="text-align: center;">
+                            <span id="p2"></span>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <div style="text-align: center;" id="result">
+
+        </div>
+    </ion-app>
+
+    <script src="script.js"></script>
+</body>
+</html>

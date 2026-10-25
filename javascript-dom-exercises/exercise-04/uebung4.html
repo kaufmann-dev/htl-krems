@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <div>
+        <textarea id="name">Max Mustermann</textarea>
+        <ul id="list">
+            <li>David Grates</li>
+            <li>Bill Jobs</li>
+        </ul>
+        <button id="add">Schüler hinzufügen</button>
+    </div>
+
+    <script>
+        document.getElementById("add").addEventListener("click", function(){
+            let text = document.getElementById("name").value;
+            let name =  document.createTextNode(text);
+            let li = document.createElement("LI");
+            li.appendChild(name);
+            document.getElementById("list").appendChild(li);
+        });
+    </script>
+</body>
+</html>

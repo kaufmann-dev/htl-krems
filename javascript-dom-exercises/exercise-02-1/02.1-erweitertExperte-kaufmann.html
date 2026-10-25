@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Rechner</title>
+	<style>
+		* {
+			font-family: 'Verdana';
+		}
+		div#form {
+			width: 50%;
+			padding: 10px;
+			margin: 10px auto;
+			display: flex;
+			flex-direction: column;
+		}
+		button {
+			padding: 10px;
+			flex: 1;
+		}
+		button:not(:last-child) {
+			margin-right: 5px;
+		}
+		label {
+			margin-bottom: 5px;
+			display: block;
+		}
+		output {
+			padding: 10px;
+			box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+			border-radius: 3px;
+			margin-bottom: 10px;
+		}
+		span {
+			color: #AAA;
+		}
+		div#numbers {
+			display: flex;
+			flex-direction: column;
+		}
+		div#lole {
+			display: flex;
+			flex-direction: row;
+		}
+		div#lole:not(:last-child) {
+			margin-bottom: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div id="form">
+		<label>Eingabe</label>
+		<output id="in"><span>Eingabe</span></output>
+		<label>Ergbenis</label>
+		<output id="out"><span>Ergebnis</span></output>
+		<div id="numbers">
+			<div id="lole">
+				<button>0</button>
+				<button>1</button>
+				<button>2</button>
+				<button>3</button>
+				<button>4</button>
+			</div>
+			<div id="lole">
+				<button>5</button>
+				<button>6</button>
+				<button>7</button>
+				<button>8</button>
+				<button>9</button>
+			</div>
+			<div id="lole">
+				<button id="add">+</button>
+				<button id="sub">-</button>
+				<button id="mul">*</button>
+				<button id="div">/</button>
+				<button id="is">=</button>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		
+	</script>
+</body>
+</html>

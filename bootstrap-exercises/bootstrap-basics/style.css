@@ -1,0 +1,31 @@
+/*.container {
+	background-color: #99f;
+}
+.row {
+	background-color: #f99;
+}
+.col {
+	background-color: #9f9;
+}
+.block {
+	background-color: #f99;
+}*/
+.block {
+	min-height: 5em;
+	line-height: 5em;
+	text-align: center;
+	background-color: #ddd;
+}
+.con2 {
+	display: none;
+}
+.toggler {
+	outline: none;
+	border: 1px solid #000;
+}
+.toggler:hover {
+	background-color: #dcd;
+}
+.toggler:active {
+	background-color: #dad;
+}

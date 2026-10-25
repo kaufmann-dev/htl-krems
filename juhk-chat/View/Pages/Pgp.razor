@@ -1,0 +1,33 @@
+﻿@page "/pgp"
+@using Domain.Repositories.Interfaces
+@using Model.Entities
+@inject IPgpRepository _pgpRepository;
+@inject NavigationManager _navigation
+
+<div class="container">
+    <h3>Control your public PGP key</h3>
+    <EditForm Model="Key" OnValidSubmit="async () => await AddAsync()"  class="form">
+            <DataAnnotationsValidator/>
+            <ValidationSummary></ValidationSummary>
+                <div class="form-row row">
+                    <div class="form-group col-md-4">
+                        <label class="small text-muted">Name</label>
+                        <InputText class="form-control form-control-sm" @bind-Value="@Key.Key"/>
+                        <ValidationMessage style="font-size: small; margin-top: 4pt" For="() => Key.Key"/>
+                    </div>
+                </div>
+    
+                <div class="form-row mt-3">
+                    <button class="btn btn-primary" type="submit">Register</button>
+                </div>
+            </EditForm>
+</div>
+@code {
+    private PgpPublicKey Key { get; set; } = new();
+
+    public async Task AddAsync()
+    {
+        Key = await _pgpRepository.CreateAsync(Key);
+        //_navigation.NavigateTo("/");
+    }
+}

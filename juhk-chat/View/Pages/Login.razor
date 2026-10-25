@@ -1,0 +1,65 @@
+﻿@page "/login"
+@using Domain.Repositories.Interfaces
+@using Model.Entities
+@inject IUserRepository _userRepository;
+@inject NavigationManager _navigation
+
+<div class="container">
+    <h3>Login</h3>
+    <EditForm Model="Password,Tag" OnValidSubmit="async () => await CheckIn()" class="form">
+        <DataAnnotationsValidator/>
+        <ValidationSummary></ValidationSummary>
+        <div class="form-row row">
+            <div class="form-group col-md-4">
+                <label class="small text-muted">Tag</label>
+                <InputText class="form-control form-control-sm" @bind-Value="@Tag"/>
+                <ValidationMessage style="font-size: small; margin-top: 4pt" For="() => Tag"/>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="small text-muted">Password</label>
+                <InputText class="form-control form-control-sm" @bind-Value="@Password"/>
+                <ValidationMessage style="font-size: small; margin-top: 4pt" For="() => Password"/>
+            </div>
+        </div>
+
+        <div class="form-row mt-3">
+            <button class="btn btn-primary" type="submit">Login</button>
+        </div>
+    </EditForm>
+    
+    <div class="alert alert-success mt-2" role="alert" style="@successAlertStyle">
+        @alertMessage
+    </div>
+</div>
+
+@code {
+    private string Password { get; set; }
+    private string Tag { get; set; }
+
+    private string successAlertStyle = "display: none;";
+    private string alertMessage = "Success - Logged in as @User.Name";
+
+    private User User = new();
+
+    public async Task CheckIn()
+    {
+        List<User> UserList = await _userRepository.ReadAsync(d => d.Tag == Tag);
+        if (UserList.Count > 1)
+        {
+            User = null;
+            throw new Exception();
+        }
+        else if(UserList[0].Password == Password)
+        {
+            User = UserList[0];
+        }
+        else
+        {
+            User = null;
+        }
+        
+        successAlertStyle = "display: block;";
+
+        
+    }
+}

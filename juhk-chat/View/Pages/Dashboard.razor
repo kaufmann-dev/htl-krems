@@ -1,0 +1,85 @@
+﻿@page "/dashboard"
+@using Model.Entities
+@using Domain.Repositories.Interfaces
+@inject IUserRepository _userRepository;
+@inject IChatRepository _chatRepository;
+
+<div class="container">
+    <h3 class="mb-3">Dashboard</h3>
+    <h4>Users</h4>
+    @if (Users.Any())
+    {
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Tag</th>
+                <th>Password</th>
+                <th>Creation date</th>
+                <th>PGP</th>
+                <th>XMR</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var user in Users)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.Name</td>
+                    <td>@user.Tag</td>
+                    <td>@user.Password</td>
+                    <td>@user.CreationDate</td>
+                    <td>@user.PgpActive</td>
+                    <td>@user.XmrActive</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No user exists.</p>
+    }
+
+    <h4>Chats</h4>
+    @if (Chats.Any())
+    {
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>PGP enforcement</th>
+                <th>Autodelete duration</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var chat in Chats)
+            {
+                <tr>
+                    <td>@chat.Id</td>
+                    <td>@chat.Name</td>
+                    <td>@chat.PgpEnforcement</td>
+                    <td>@chat.AutoDeleteDuration</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No chat exists.</p>
+    }
+</div>
+
+@code {
+    public List<Chat> Chats { get; set; } = new List<Chat>();
+    public List<User> Users { get; set; } = new List<User>();
+    protected override async Task OnInitializedAsync()
+    {
+        Chats = await _chatRepository.ReadAllAsync();
+        Users = await _userRepository.ReadAllAsync();
+    }
+
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1><%= productTitle %></h1>
+        <ul>
+            <% for(let i = 0; i<debitors.length; i++){ %>
+                <li><%= debitors[i].contact %></li>
+            <% } %>
+        </ul>
+    </body>
+</html>

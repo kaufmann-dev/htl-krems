@@ -1,0 +1,9 @@
+version: '3'
+
+services: 
+  db:
+    image: oracledb
+    volumes: 
+      - './data/u02/:/u02/'
+    ports: 
+      - "1521:1521"

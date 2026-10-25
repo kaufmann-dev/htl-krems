@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="myscript.js"></script>
+</head>
+<body>
+	<section>
+		<h1>Terminverwaltung</h1>
+		<div class="wrapper">
+			<hr>
+			<b>Datum</b>: <input type="date" name="date" value="2020-12-17"><br>
+			<button>Neuer Termin</button>
+			<div class="border">
+				<h3>Kinder zu Schule bringen</h3>
+				<hr>
+				<ul>
+					<li><b>Datum:</b> 17. Dez. 2020</li>
+					<li><b>Uhrzeit:</b> 07:15 - 07:45</li>
+					<li><b>Ort:</b> Schule</li>
+					<li><b>Kategorie:</b> Kinder</li>
+					<li><b>Kommentar:</b> Referat Lili</li>
+				</ul>
+				<button class="del">Termin löschen</button>
+			</div>
+			<div class="border">
+				<h3>Meeting C3</h3>
+				<hr>
+				<ul>
+					<li><b>Datum:</b> 17. Dez. 2020</li>
+					<li><b>Uhrzeit:</b> 08:30</li>
+					<li><b>Ort:</b> Versammlungssaal C3</li>
+					<li><b>Kategorie:</b> Arbeit</li>
+					<li><b>Kommentar:</b> -</li>
+				</ul>
+				<button class="del">Termin löschen</button>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h1>Personalverwaltung</h1>
+		<div class="wrapper">
+			<hr>
+			<b>Mitarbeiter:</b> <input type="text" name="name" value="Max Mustermann">
+			<div class="border">
+				<h3>Allgemeines</h3>
+				<hr>
+				<ul>
+					<li><b>Name:</b> Max Mustermann</li>
+					<li><b>Alter:</b> 21 Jahre</li>
+					<li><b>Stelle:</b> Programmierer</li>
+					<li><b>Gehalt:</b> 3.000€ netto</li>
+					<li><b>Zeit im Unternehmen:</b> 2 Jahre 3 Monate</li>
+				</ul>
+			</div>
+			<div class="border">
+				<h3>Beschwerden und Notizen</h3>
+				<hr>
+				<ul>
+					<li><b>18.4.2019:</b> Unhöfliches Verhalten gegenüber Vertreter von VangwaCorp <button class="noMargin">Details</button></li>
+				</ul>
+			</div>
+			<button>Gehalt verändern</button><br>
+			<button>Jobposition verändern</button><br>
+			<button>Mitarbeiter feuern</button><br>
+			<button>Nachricht an Mitarbeiter</button><br>
+		</div>
+	</section>
+
+	<section>
+		<h1>Gewinn-Verlust-Rechnung</h1>
+		<div class="wrapper">
+			<hr>
+			<b>Jahr:</b> <input type="number" name="year" value="2009">
+			<div class="border">
+				<h3>Gewinn</h3>
+				<hr>
+				<ul>
+					<li><b>Programm "Unified mouse-control":</b> 42.463€ <button class="noMargin">Details</button></li>
+					<li><b>Spiel "movomax: train your control"</b> 412.843€ <button class="noMargin">Details</button></li>
+					<li><b>Kleinprojekte:</b> 38.903€ <button class="noMargin">Details</button></li>
+				</ul>
+				<div class="spacer"></div>
+				<b>Insgesamter Gewinn:</b> 492.209€
+			</div>
+			<div class="border">
+				<h3>Ausgaben</h3>
+				<hr>
+				<ul>
+					<li><b>Miete</b> 40.489€ <button class="noMargin">Details</button></li>
+					<li><b>Neue Technik-Ausstattung und Computer</b> 53.042€ <button class="noMargin">Details</button></li>
+					<li><b>Server</b> 11.942€ <button class="noMargin">Details</button></li>
+					<li><b>Mitarbeiter-Kosten</b> 204.420€ <button class="noMargin">Details</button></li>
+				</ul>
+				<div class="spacer"></div>
+				<b>Insgesamte Ausgaben:</b> 309.893€
+			</div>
+			<div class="spacer"></div>
+			<b>Insgeamt:</b> 182.316€ Gewinn
+		</div>
+	</section>
+</body>
+</html>
